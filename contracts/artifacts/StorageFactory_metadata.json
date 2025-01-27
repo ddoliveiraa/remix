@@ -11,6 +11,62 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "listOfSimpleStorageContracts",
+				"outputs": [
+					{
+						"internalType": "contract SimpleStorage",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_simpleStorageIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "sfGet",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_simpleStorageIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_newSimpleStorageNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "sfStore",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -40,12 +96,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/StorageFactory.sol": {
-			"keccak256": "0x5feac5d467515e3208c65ba54d4a4461846721a8765a04911037d059c0f134d3",
+		"contracts/SimpleStorage.sol": {
+			"keccak256": "0xbcae001833df90ab77306445956be15ec19f6b2553ec3ff7b413918b21093ef5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://103dff640a2f2a777a6e5cdef40723874117b7bc66701fd31642d5472d372aa2",
-				"dweb:/ipfs/Qmezr2jjyKWMS3vhzWWUXv3bSvXxyGqBBjdzcTRv9VW1wA"
+				"bzz-raw://0dd5f4815ab5ccae7a77b57750be0d4cabd06cfbabdedaa5e413adb974f925ce",
+				"dweb:/ipfs/QmV6Ptwy58WRdTFLEc8sfmvcTVEPLSMrdYW2Ujj46WtTqX"
+			]
+		},
+		"contracts/StorageFactory.sol": {
+			"keccak256": "0xdd437b07d467507c949ef641da098d87a4cba8918703fff819215876e8f8ff37",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e447f8345fff9a125f13355374dfb7d8116cfa8c8bcf7e29c3b2fc01d07cc9a",
+				"dweb:/ipfs/QmXUYAv18DWKPk4NajLsV4cLLwRd4pzJREv2NFbows1uRu"
 			]
 		}
 	},
