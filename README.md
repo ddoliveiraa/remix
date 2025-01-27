@@ -63,3 +63,8 @@ To integrate this repository with Remix IDE, follow these steps:
 1. Install Remixd globally:
    ```bash
    npm install -g @remix-project/remixd
+2. Run Remixd to connect your local files to the web-based Remix IDE:
+   ```bash
+   remixd -s ./remix -u https://remix.ethereum.org
+
+Now you can interact with this workspace seamlessly in Remix IDE! 🚀
