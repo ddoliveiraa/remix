@@ -1,0 +1,286 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "hackathonAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "theme",
+						"type": "string"
+					}
+				],
+				"name": "HackathonCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "hackathonAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "participant",
+						"type": "address"
+					}
+				],
+				"name": "ParticipantRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "hackathonAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "teamAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "teamName",
+						"type": "string"
+					}
+				],
+				"name": "TeamAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_hackathonAddress",
+						"type": "address"
+					}
+				],
+				"name": "addParticipantToHackathon",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "_skills",
+						"type": "string[]"
+					}
+				],
+				"name": "addSkillsToParticipant",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_theme",
+						"type": "string"
+					}
+				],
+				"name": "createHackathon",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_hackathonAddress",
+						"type": "address"
+					}
+				],
+				"name": "getHackathonInfo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "contractAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "theme",
+						"type": "string"
+					},
+					{
+						"internalType": "address[]",
+						"name": "participants",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "teams",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_participant",
+						"type": "address"
+					}
+				],
+				"name": "getParticipantInfo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "participantAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string[]",
+						"name": "skills",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "listHackathons",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "contractAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "theme",
+								"type": "string"
+							},
+							{
+								"internalType": "address[]",
+								"name": "participants",
+								"type": "address[]"
+							},
+							{
+								"internalType": "address[]",
+								"name": "teams",
+								"type": "address[]"
+							}
+						],
+						"internalType": "struct Manager.HackathonDetails[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Manager.sol": "Manager"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Hackathon.sol": {
+			"keccak256": "0x46bbe860b87089929b65cc313a82e4d9db2bdcf6cb52bce418e6965ef4c1d8ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://301bee6ef3944eabb7d6edee14716b0a8c8930a32a56965253eabe6e5990581a",
+				"dweb:/ipfs/QmfLMcRUxZhGd4UFR9ioUThLvZeEhaMFb8xLtEEvKHPfoW"
+			]
+		},
+		"contracts/Manager.sol": {
+			"keccak256": "0x5c912beab837bc5a0cbd854da989a52147f3ce4f84e23ba2da69cd7fbf700a3f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://95f0060514895b324d197af916c237cfbfd4418bdb9a7c253f0d230a602810e9",
+				"dweb:/ipfs/QmQcbeX2ewKiED3od7gMd1An1ascawmnK7YrJehLwDdixD"
+			]
+		},
+		"contracts/Member.sol": {
+			"keccak256": "0x8e4e70537e1a0aae9bd0de2ba3ff7d37884a6ddc0753d0b1b8f4792ae5d88265",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://33b13383728eb7ef011128fdd1a4decf5a73173e964cb5e7eca470301ee743bb",
+				"dweb:/ipfs/QmTadjtq15c1nDawYY81TBTsTq7ha8ntYqEWJckHzA43R9"
+			]
+		},
+		"contracts/Team.sol": {
+			"keccak256": "0xf6cc17e9e4534eaa6a1eed0651242d5764026697c3b0038e137e712324989e18",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://93f5982f25fd265bb357f8c1f63b7e89bb6946b0c1e27611ccde523c7690d2c3",
+				"dweb:/ipfs/QmXraNLkYN6TedNrfMEDtjckrkNsfbFxTfePCsUc8DEeyD"
+			]
+		}
+	},
+	"version": 1
+}
