@@ -15,12 +15,10 @@ contract Team {
         }
     }
 
-    // Function to add a member to the team
     function addMember(address _memberAddress) public {
         members.push(_memberAddress);
     }
 
-    // Function to list the members of the team
     function listMembers() public view returns (address[] memory) {
         return members;
     }

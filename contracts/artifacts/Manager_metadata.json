@@ -36,6 +36,25 @@
 					{
 						"indexed": true,
 						"internalType": "address",
+						"name": "memberAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "MemberCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
 						"name": "hackathonAddress",
 						"type": "address"
 					},
@@ -71,7 +90,7 @@
 						"type": "string"
 					}
 				],
-				"name": "TeamAdded",
+				"name": "TeamCreated",
 				"type": "event"
 			},
 			{
@@ -83,19 +102,6 @@
 					}
 				],
 				"name": "addParticipantToHackathon",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string[]",
-						"name": "_skills",
-						"type": "string[]"
-					}
-				],
-				"name": "addSkillsToParticipant",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -121,12 +127,48 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "createMember",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "_hackathonAddress",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_teamName",
+						"type": "string"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_members",
+						"type": "address[]"
 					}
 				],
-				"name": "getHackathonInfo",
+				"name": "createTeam",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "hackathonInfo",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -142,16 +184,6 @@
 						"internalType": "string",
 						"name": "theme",
 						"type": "string"
-					},
-					{
-						"internalType": "address[]",
-						"name": "participants",
-						"type": "address[]"
-					},
-					{
-						"internalType": "address[]",
-						"name": "teams",
-						"type": "address[]"
 					}
 				],
 				"stateMutability": "view",
@@ -160,22 +192,17 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_participant",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
-				"name": "getParticipantInfo",
+				"name": "hackathons",
 				"outputs": [
 					{
-						"internalType": "address",
-						"name": "participantAddress",
+						"internalType": "contract Hackathon",
+						"name": "",
 						"type": "address"
-					},
-					{
-						"internalType": "string[]",
-						"name": "skills",
-						"type": "string[]"
 					}
 				],
 				"stateMutability": "view",
@@ -250,19 +277,19 @@
 	},
 	"sources": {
 		"contracts/Hackathon.sol": {
-			"keccak256": "0x46bbe860b87089929b65cc313a82e4d9db2bdcf6cb52bce418e6965ef4c1d8ba",
+			"keccak256": "0xda5671b6eccb7c2be509cd8a18d33d7a4b76aaa45e5b815d42d91dc8a75cf5f3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://301bee6ef3944eabb7d6edee14716b0a8c8930a32a56965253eabe6e5990581a",
-				"dweb:/ipfs/QmfLMcRUxZhGd4UFR9ioUThLvZeEhaMFb8xLtEEvKHPfoW"
+				"bzz-raw://5c2fdeb31d06a9b5a48734e469837df783fad19f5a6c5edbe52d51f0212ece4d",
+				"dweb:/ipfs/QmYcMahRJFkZkdq94PzkmFjJws9etBUCvxyuEbuuUSgt2D"
 			]
 		},
 		"contracts/Manager.sol": {
-			"keccak256": "0x5c912beab837bc5a0cbd854da989a52147f3ce4f84e23ba2da69cd7fbf700a3f",
+			"keccak256": "0xe9e480b40cc567abb42db015bfabfb48fbce9c7b50a2019459c761170a9f7376",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://95f0060514895b324d197af916c237cfbfd4418bdb9a7c253f0d230a602810e9",
-				"dweb:/ipfs/QmQcbeX2ewKiED3od7gMd1An1ascawmnK7YrJehLwDdixD"
+				"bzz-raw://78e912289cfbb01fe8f3b3df08e5b33bbc7f4895c3dac03cde94216c890c5a22",
+				"dweb:/ipfs/Qmd9cZ6gyw9q3F9dYvqXck5sqNByNhV9skAHCUB51QNrqL"
 			]
 		},
 		"contracts/Member.sol": {
@@ -274,11 +301,11 @@
 			]
 		},
 		"contracts/Team.sol": {
-			"keccak256": "0xf6cc17e9e4534eaa6a1eed0651242d5764026697c3b0038e137e712324989e18",
+			"keccak256": "0x00c58c0709c8c3358115ff8d306bd0243d43eaa2206c9bde013560d8e99f7b61",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://93f5982f25fd265bb357f8c1f63b7e89bb6946b0c1e27611ccde523c7690d2c3",
-				"dweb:/ipfs/QmXraNLkYN6TedNrfMEDtjckrkNsfbFxTfePCsUc8DEeyD"
+				"bzz-raw://bba9754e2ed45b2ed434ad59a62cb0cdfa05102003033ac05f4e2dc0c3f36568",
+				"dweb:/ipfs/QmZx8weLLQ3aCTTZtzBDbt3PCxCAJ9pn6xv55gUg8npTiV"
 			]
 		}
 	},
